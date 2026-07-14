@@ -10,9 +10,10 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.19.0'
-      - name: Build
+      - name: Build and Upload
         run: |
           cd flutter_src
+          flutter clean
           flutter pub get
           flutter build apk --release
       - name: Upload APK
